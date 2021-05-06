@@ -4,13 +4,64 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
 	<title>Title</title>
 </head>
 
 <body>
+	<div class="container">
+		<div class="row valign-wrapper">
+			<!-- Title -->
+			<div class="col s6">
+				<h1 class="grey-text">Photo Gallery</h1>
+			</div>
+			<!-- Button -->
+			<div class="col s6">
+				<a class="btn-floating btn-large waves-effect waves-light red right modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
+			</div>
+		</div>
 
-	<script src="js/script.js"></script>
+		<div class="row" id="imageContainer">
+			<!-- Image Cards -->
+
+		</div>
+	  </div>
+	  <!-- Add Photo Modal -->
+	  <div id="modal1" class="modal">
+		<div class="modal-content">
+			<h3>Add Post</h3>
+		  <form action="/addPhoto" method="POST" enctype="multipart/form-data">
+			<!-- Title -->
+			<div class="input-field">
+				<input id="title" name="title" type="text" class="validate" required>
+          		<label for="title">Title</label>
+			</div>
+			<!-- Description -->
+			<div class="input-field">
+				<input id="desc" name="desc" type="text" class="validate" required>
+          		<label for="desc">Description</label>
+			</div>
+			<!-- File Upload -->
+			<div class="file-field input-field">
+				<div class="btn">
+				  <span>IMG</span>
+				  <input type="file" id="image" name="image" class="validate" required>
+				</div>
+				<div class="file-path-wrapper">
+				  <input class="file-path validate" type="text">
+				</div>
+			  </div>
+			  <!-- Submit Button -->
+			  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+				<i class="material-icons right">send</i>
+			  </button>
+		  </form>
+		</div>
+	  </div>
 </body>
 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <script src="js/script.js"></script>
 </html>
